@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
+html { scroll-behavior: smooth; }
+
+/* Hormati preferensi user yang anti animasi */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 2) PILIH TEMA — Clover Dark Pro (gelap elegan) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* LIGHT fallback (kalau user pilih light) */
+  --bg: #0B1713;
+  --surface: #0F201A;
+  --fg: #E9F7F0;
+  --muted: #BFE5D4;
+  --border: #1F3A32;
+
+  --cc-primary: #10B981; /* emerald-500 */
+  --cc-primary-90: color-mix(in oklab, #10B981 90%, transparent);
+  --cc-on-primary: #ffffff;
+
+  /* Gradien hero */
+  --cc-grad-a: rgba(16,185,129,.55);
+  --cc-grad-b: rgba(2,6,23,.55);
+  --cc-grad-c: rgba(5,150,105,.4);
+  --cc-grad-a-soft: rgba(16,185,129,.22);
+  --cc-grad-b-soft: rgba(2,6,23,.22);
+}
+.dark {
+  /* DARK values (defaultnya nanti kita set ke dark via script) */
+  --bg: #0B1713;
+  --surface: #0F201A;
+  --fg: #E9F7F0;
+  --muted: #BFE5D4;
+  --border: #1F3A32;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* 3) Mapping util semantik yang dipakai komponen */
+@layer utilities {
+  .bg-background { background-color: var(--bg); }
+  .bg-accent { background-color: var(--surface); }
+  .text-foreground { color: var(--fg); }
+  .text-muted-foreground { color: var(--muted); }
+  .border { border-color: var(--border); }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  .bg-primary { background-color: var(--cc-primary); }
+  .bg-primary\/90 { background-color: var(--cc-primary-90); }
+  .text-primary-foreground { color: var(--cc-on-primary); }
+  .ring-primary { --tw-ring-color: var(--cc-primary); }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* glassy transparan yang dipakai navbar/hero */
+  .bg-background\/60 { background-color: color-mix(in oklab, var(--bg) 60%, transparent); }
+  .bg-background\/70 { background-color: color-mix(in oklab, var(--bg) 70%, transparent); }
 }
