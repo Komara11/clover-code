@@ -1,10 +1,10 @@
-import { ArrowUpRight, MapPin, Mail, Github, Phone, Linkedin,Instagram, Facebook, } from "lucide-react";
+import { ArrowUpRight, MapPin, Mail, Github, Phone, Linkedin, Instagram, Facebook, } from "lucide-react";
 
 const BUSINESS_INFO = {
     brand: "Clovercode",
     tagline: "Code that converts.",
     shortDescription: "Website & web app modern yang mendorong pertumbuhan bisnis.",
-    ctaLabel: "Konsultasi Gratis",
+    ctaLabel: "Konsultasi Gratis Via Whatsapp",
     email: "clovercode@gmial.com",
     phone: "+62 812 234 872 20",
     social: {
@@ -82,6 +82,13 @@ const Contact = () => {
                             <button className="inline-flex items-center justify-center gap-2 rounded-xl border bg-primary/90 px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary">
                                 Kirim Pesan <ArrowUpRight className="h-4 w-4" />
                             </button>
+                            <a
+                                href="https://wa.me/6281223487220"
+                                className="inline-flex items-center justify-center gap-2 rounded-xl border bg-primary/90 px-4 py-3 text-sm font-medium text-primary-foreground hover:bg-primary"
+                            >
+                                {BUSINESS_INFO.ctaLabel}
+                                <ArrowUpRight className="h-4 w-4" />
+                            </a>
                         </div>
                     </form>
                 </div>

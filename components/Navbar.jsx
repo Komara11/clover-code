@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowUpRight, Menu } from "lucide-react";
+import { ArrowUpRight, Menu, X, Mail, Phone, MapPin } from "lucide-react";
 
 const Navbar = () => {
 
@@ -26,8 +26,8 @@ const Navbar = () => {
         tagline: "Code that converts.",
         shortDescription: "Website & web app modern yang mendorong pertumbuhan bisnis.",
         ctaLabel: "Konsultasi Gratis",
-        email: "halo@ogastudio.com",
-        phone: "+62 812-3456-7890",
+        email: "clovercode@gmial.com",
+        phone: "+62 812 234 872 20",
         social: {
             github: "https://github.com/username",
             linkedin: "https://www.linkedin.com/in/username/",
@@ -35,6 +35,7 @@ const Navbar = () => {
             facebook: "https://facebook.com/username",
         },
     };
+
 
     const NAV_ITEMS = [
         { label: "Home", href: "#home" },
@@ -121,9 +122,6 @@ const Navbar = () => {
                                 <a href={`tel:${BUSINESS_INFO.phone}`} className="inline-flex items-center gap-2 text-foreground/80">
                                     <Phone className="h-4 w-4" /> {BUSINESS_INFO.phone}
                                 </a>
-                                <p className="inline-flex items-center gap-2 text-foreground/80">
-                                    <MapPin className="h-4 w-4" /> {BUSINESS_INFO.location}
-                                </p>
                             </div>
                         </div>
                     </div>
