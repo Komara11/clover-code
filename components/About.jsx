@@ -54,7 +54,7 @@ const About = () => {
                     <div>
                         <SectionTitle title="Tentang Kami" subtitle="Tim kecil yang bergerak cepat, fokus pada hasil nyata dan pengalaman pengguna." />
                         <div className="prose dark:prose-invert max-w-none">
-                            <p>
+                            <p className="text-justify" >
                                 Kami membantu UMKM, startup, dan divisi korporat membangun produk digital yang efektif—tanpa ribet. Pendekatan kami sederhana: pahami tujuan bisnis, rancang solusi yang mudah dipakai, lalu jalankan iterasi cepat berdasarkan data.
                             </p>
                             <ul>

@@ -39,7 +39,7 @@ const PROJECTS = [
     {
         id: "p2",
         title: "Admin Page",
-        year: 2024,
+        year: 2025,
         tags: ["Web App", "Dashboard"],
         tech: ["Next.js", "Tailwindcss", "Firebase", "Vercel"],
         desc: "Admin page pengelola wisata yang ada di desa Payung",
@@ -51,7 +51,7 @@ const PROJECTS = [
     {
         id: "p3",
         title: "Aplikasi Sipayung",
-        year: 2024,
+        year: 2025,
         tags: ["Aplikasi", "Android"],
         tech: ["React Native", "Firebase"],
         desc:
@@ -65,11 +65,11 @@ const PROJECTS = [
     {
         id: "p4",
         title: "Prototype Aplikasi Baleni",
-        year: 2023,
+        year: 2025,
         tags: ["Prototype"],
         tech: ["Figma"],
         desc: "Tampilan UI Aplikasi yang menarik.",
-        cover: "./image/gambar4.jpeg",
+        cover: "./image/gambar4.jpg",
         links: {
             live:
                 "https://www.figma.com/proto/wfQnGEjf3BNRczRQd3kKSi/Untitled?node-id=1-12&t=w4ZQjQLst0ETJxVH-1&starting-point-node-id=1%3A12&scaling=contain&content-scaling=fixed",
