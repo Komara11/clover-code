@@ -82,7 +82,7 @@ const Contact = () => {
                             <button disabled className="inline-flex items-center justify-center gap-2 rounded-xl border bg-primary/90 px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary">
                                 Kirim Pesan <ArrowUpRight className="h-4 w-4" />
                             </button>
-                            <p>untuk sementara tidak bisa mengirim lewat email, silahkan konsultasi lewat whatsapp</p>
+                            <p className="text-justify">untuk sementara tidak bisa mengirim lewat email, silahkan konsultasi lewat whatsapp</p>
                             <a
                                 href="https://wa.me/6281223487220"
                                 className="inline-flex items-center justify-center gap-2 rounded-xl border bg-primary/90 px-4 py-3 text-sm font-medium text-primary-foreground hover:bg-primary"
