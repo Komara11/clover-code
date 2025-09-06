@@ -55,11 +55,11 @@ const About = () => {
                         <SectionTitle title="Tentang Kami" subtitle="Tim kecil yang bergerak cepat, fokus pada hasil nyata dan pengalaman pengguna." />
                         <div className="prose dark:prose-invert max-w-none">
                             <p className="text-justify" >
-                                Kami membantu UMKM, startup, dan divisi korporat membangun produk digital yang efektif—tanpa ribet. Pendekatan kami sederhana: pahami tujuan bisnis, rancang solusi yang mudah dipakai, lalu jalankan iterasi cepat berdasarkan data.
+                                Kami membantu UMKM, startup, dan divisi korporat membangun produk digital yang efektif tanpa ribet. Pendekatan kami sederhana pahami tujuan bisnis, rancang solusi yang mudah dipakai, lalu jalankan iterasi cepat berdasarkan data.
                             </p>
                             <ul>
-                                <li>Berpengalaman di Next.js, React, dan ekosistem modern.</li>
-                                <li>Kolaborasi transparan dengan milestone jelas.</li>
+                                <li>Berpengalaman di Next.js, React, ekosistem modern dan Kolaborasi transparan dengan milestone jelas</li>
+            
                                 <li>Fokus ke performa, aksesibilitas, dan skalabilitas.</li>
                             </ul>
                         </div>
