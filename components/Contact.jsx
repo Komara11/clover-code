@@ -5,7 +5,7 @@ const BUSINESS_INFO = {
     tagline: "Code that converts.",
     shortDescription: "Website & web app modern yang mendorong pertumbuhan bisnis.",
     ctaLabel: "Konsultasi Gratis Via Whatsapp",
-    email: "clovercode@gmial.com",
+    email: "clovercode@gmail.com",
     phone: "+62 812 234 872 20",
     social: {
         github: "https://github.com/username",

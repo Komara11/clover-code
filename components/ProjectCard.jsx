@@ -43,7 +43,7 @@ const PROJECTS = [
         tags: ["Web App", "Dashboard"],
         tech: ["Next.js", "Tailwindcss", "Firebase", "Vercel"],
         desc: "Admin page pengelola wisata yang ada di desa Payung",
-        cover: "./image/gambar2.png",
+        cover: "./image/gambar2.jpeg",
         links: { live: "#", repo: "#", case: "#" },
         ratio: "16/10",
         fit: "cover",
@@ -74,7 +74,7 @@ const PROJECTS = [
             live:
                 "https://www.figma.com/proto/wfQnGEjf3BNRczRQd3kKSi/Untitled?node-id=1-12&t=w4ZQjQLst0ETJxVH-1&starting-point-node-id=1%3A12&scaling=contain&content-scaling=fixed",
         },
-        ratio: "9/16",
+        ratio: "16/10",
         fit: "cover",
     },
 ];
