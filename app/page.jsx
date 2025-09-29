@@ -16,18 +16,23 @@ export default function PortfolioPage() {
     <>
       <Head>
         <title>Clover Code</title>
-        <link rel="icon" href="/logo.png"/>
+
+        {/* ✅ favicon untuk hasil pencarian Google */}
+        <link rel="icon" href="/logo.png" type="image/png" />
+
         <meta
-          name="CloverCode"
-          content="Jasa pembuatan website, aplikasi, tugas dan lain-lain."
+          name="Clover Code"
+          content="Clover Code - Jasa pembuatan website, aplikasi, tugas dan lain-lain."
         />
+
+        {/* ✅ structured data logo untuk brand */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://www.clovercode.shop",
-              "@type": "clovercode",
-              "name": "clovercode",
+              "@type": "Cllover Code",
+              "name": "Clover Code",
               "url": "https://www.clovercode.shop",
               "logo": "https://www.clovercode.shop/logo.png",
               // "sameAs": [
@@ -41,7 +46,6 @@ export default function PortfolioPage() {
       </Head>
 
       <div className="min-h-[100dvh] bg-background text-foreground antialiased">
-        {/* Base colors via Tailwind (light/dark) rely on your Tailwind config. */}
         <Navbar />
         <main>
           <Hero />
