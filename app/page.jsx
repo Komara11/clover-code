@@ -16,6 +16,7 @@ export default function PortfolioPage() {
     <>
       <Head>
         <title>Clover Code</title>
+        <link rel="icon" href="/logo.png"/>
         <meta
           name="CloverCode"
           content="Jasa pembuatan website, aplikasi, tugas dan lain-lain."
