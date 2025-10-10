@@ -9,7 +9,7 @@ const BUSINESS_INFO = {
     ctaLabel: "Konsultasi Gratis Via Whatsapp",
     email: "ogajet27@gmail.com",
     phone: "+6281223487220",
-    address: "Majalengka, Jawa Barat",
+    address: "Majalengka, Indonesia",
     social: {
         github: "https://github.com/username",
         linkedin: "https://www.linkedin.com/in/username/",

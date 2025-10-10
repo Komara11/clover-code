@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: "Clovercode - Jasa Pembuatan Website",
     description: "Solusi website profesional, cepat, dan responsif.",
-    url: "https://www.clovercode.shop",
+    url: "https://clovercode.shop",
     siteName: "Clovercode",
     images: [
       {
