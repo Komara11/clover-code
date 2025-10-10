@@ -1,7 +1,6 @@
-"use client"; // <-- PENTING kalau kamu di Next.js App Router (app/)
+"use client";
 
-import { useState } from "react";
-import { ArrowUpRight, Mail, Github, Phone, Linkedin, Instagram, Facebook } from "lucide-react";
+import { Mail, Github, Phone, Linkedin, Instagram, Facebook, MapPin } from "lucide-react";
 
 const BUSINESS_INFO = {
     brand: "Clovercode",
@@ -10,6 +9,7 @@ const BUSINESS_INFO = {
     ctaLabel: "Konsultasi Gratis Via Whatsapp",
     email: "ogajet27@gmail.com",
     phone: "+6281223487220",
+    address: "Majalengka, Jawa Barat",
     social: {
         github: "https://github.com/username",
         linkedin: "https://www.linkedin.com/in/username/",
@@ -18,7 +18,6 @@ const BUSINESS_INFO = {
     },
 };
 
-// Pindahkan komponen kecil ke luar agar tidak re-def setiap render
 const Container = ({ children, className = "" }) => (
     <div className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>
 );
@@ -31,146 +30,142 @@ const SectionTitle = ({ title, subtitle }) => (
 );
 
 const Contact = () => {
-    const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
-
-    // FIX: ekstrak name & value terlebih dahulu
-    const onChange = ({ target: { name, value } }) => {
-        setForm((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const subject = encodeURIComponent(
-            `Kontak Baru: ${form.name}${form.company ? ` - ${form.company}` : ""}`
-        );
-        const body = encodeURIComponent(
-            [
-                `Nama     : ${form.name}`,
-                `Email    : ${form.email}`,
-                form.company ? `Perusahaan: ${form.company}` : null,
-                "",
-                "Pesan:",
-                form.message,
-            ]
-                .filter(Boolean)
-                .join("\n")
-        );
-        window.location.href = `mailto:${BUSINESS_INFO.email}?subject=${subject}&body=${body}`;
-    };
-
     return (
-        <section id="contact" className="scroll-mt-24 pt-20 pb-24">
+        <section id="contact" className="scroll-mt-24 pt-20 pb-24 bg-gradient-to-b from-background to-muted/20">
             <Container>
-                <div className="grid gap-8 md:grid-cols-2">
-                    {/* Kiri: Info kontak */}
-                    <div>
-                        <SectionTitle
-                            title="Diskusikan Proyek Anda"
-                            subtitle="Ceritakan kebutuhan Anda, kami bantu estimasi waktu & biaya."
-                        />
-                        <div className="grid gap-3 text-sm">
-                            <a href={`mailto:${BUSINESS_INFO.email}`} className="inline-flex items-center gap-2" aria-label="Kirim email">
-                                <Mail className="h-4 w-4" /> {BUSINESS_INFO.email}
-                            </a>
-                            <a
-                                href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, "")}`}
-                                className="inline-flex items-center gap-2"
-                                aria-label="Hubungi telepon"
-                            >
-                                <Phone className="h-4 w-4" /> {BUSINESS_INFO.phone}
-                            </a>
-                            <div className="mt-2 flex items-center gap-2 text-sm">
-                                <a href={BUSINESS_INFO.social.github} className="rounded-xl border p-2 hover:bg-accent" aria-label="GitHub">
-                                    <Github className="h-4 w-4" />
+                {/* Header Section */}
+                <div className="mb-16">
+                    <SectionTitle
+                        title="Hubungi Kami"
+                        subtitle="Mari berkolaborasi untuk mewujudkan ide bisnis digital Anda"
+                    />
+                </div>
+
+                <div className="grid gap-12 lg:grid-cols-2 max-w-5xl mx-auto">
+                    {/* Left: Contact Information */}
+                    <div className="space-y-8">
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-semibold">Informasi Kontak</h3>
+                            
+                            {/* Email */}
+                            <div className="flex items-start gap-4 p-4 rounded-2xl border bg-background hover:shadow-md transition-shadow">
+                                <div className="p-2 bg-primary/10 rounded-lg">
+                                    <Mail className="h-5 w-5 text-primary" />
+                                </div>
+                                <div>
+                                    <p className="font-medium text-sm text-muted-foreground">Email</p>
+                                    <a 
+                                        href={`mailto:${BUSINESS_INFO.email}`}
+                                        className="text-lg hover:text-primary transition-colors"
+                                    >
+                                        {BUSINESS_INFO.email}
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Phone */}
+                            <div className="flex items-start gap-4 p-4 rounded-2xl border bg-background hover:shadow-md transition-shadow">
+                                <div className="p-2 bg-primary/10 rounded-lg">
+                                    <Phone className="h-5 w-5 text-primary" />
+                                </div>
+                                <div>
+                                    <p className="font-medium text-sm text-muted-foreground">Telepon/WhatsApp</p>
+                                    <a 
+                                        href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, "")}`}
+                                        className="text-lg hover:text-primary transition-colors"
+                                    >
+                                        {BUSINESS_INFO.phone}
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Address */}
+                            <div className="flex items-start gap-4 p-4 rounded-2xl border bg-background hover:shadow-md transition-shadow">
+                                <div className="p-2 bg-primary/10 rounded-lg">
+                                    <MapPin className="h-5 w-5 text-primary" />
+                                </div>
+                                <div>
+                                    <p className="font-medium text-sm text-muted-foreground">Lokasi</p>
+                                    <p className="text-lg">{BUSINESS_INFO.address}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Social Media */}
+                        <div className="space-y-4">
+                            <h4 className="font-semibold">Follow Kami</h4>
+                            <div className="flex gap-3">
+                                <a 
+                                    href={BUSINESS_INFO.social.github} 
+                                    className="rounded-xl border p-3 hover:bg-accent hover:shadow-md transition-all"
+                                    aria-label="GitHub"
+                                >
+                                    <Github className="h-5 w-5" />
                                 </a>
-                                <a href={BUSINESS_INFO.social.linkedin} className="rounded-xl border p-2 hover:bg-accent" aria-label="LinkedIn">
-                                    <Linkedin className="h-4 w-4" />
+                                <a 
+                                    href={BUSINESS_INFO.social.linkedin} 
+                                    className="rounded-xl border p-3 hover:bg-accent hover:shadow-md transition-all"
+                                    aria-label="LinkedIn"
+                                >
+                                    <Linkedin className="h-5 w-5" />
                                 </a>
-                                <a href={BUSINESS_INFO.social.instagram} className="rounded-xl border p-2 hover:bg-accent" aria-label="Instagram">
-                                    <Instagram className="h-4 w-4" />
+                                <a 
+                                    href={BUSINESS_INFO.social.instagram} 
+                                    className="rounded-xl border p-3 hover:bg-accent hover:shadow-md transition-all"
+                                    aria-label="Instagram"
+                                >
+                                    <Instagram className="h-5 w-5" />
                                 </a>
-                                <a href={BUSINESS_INFO.social.facebook} className="rounded-xl border p-2 hover:bg-accent" aria-label="Facebook">
-                                    <Facebook className="h-4 w-4" />
+                                <a 
+                                    href={BUSINESS_INFO.social.facebook} 
+                                    className="rounded-xl border p-3 hover:bg-accent hover:shadow-md transition-all"
+                                    aria-label="Facebook"
+                                >
+                                    <Facebook className="h-5 w-5" />
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    {/* Kanan: Form */}
-                    <form onSubmit={handleSubmit} className="rounded-2xl border bg-background p-6 shadow-sm">
-                        <div className="grid gap-4">
-                            <div>
-                                <label htmlFor="name" className="text-sm font-medium">Nama</label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    required
-                                    value={form.name}
-                                    onChange={onChange}
-                                    autoComplete="name"
-                                    className="mt-1 w-full rounded-xl border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
-                                    placeholder="Nama lengkap"
-                                />
+                    {/* Right: CTA Section */}
+                    <div className="space-y-6">
+                        <div className="rounded-2xl border bg-background p-8 shadow-sm">
+                            <h3 className="text-xl font-semibold mb-4">Mulai Proyek Anda</h3>
+                            <p className="text-muted-foreground mb-6">
+                                Konsultasi gratis untuk mendiskusikan kebutuhan dan mendapatkan estimasi proyek Anda.
+                            </p>
+                            
+                            <div className="space-y-4">
+                                {/* WhatsApp CTA */}
+                                <a
+                                    href="https://wa.me/6281223487220"
+                                    className="flex items-center justify-between gap-4 rounded-xl bg-green-600 hover:bg-green-700 px-6 py-4 text-white font-medium transition-colors group"
+                                >
+                                    <span>{BUSINESS_INFO.ctaLabel}</span>
+                                    <div className="p-2 bg-white/20 rounded-lg group-hover:scale-110 transition-transform">
+                                        <Phone className="h-4 w-4" />
+                                    </div>
+                                </a>
+
+                                {/* Email CTA */}
+                                <a
+                                    href={`mailto:${BUSINESS_INFO.email}?subject=Konsultasi Proyek&body=Halo, saya tertarik untuk berkonsultasi mengenai proyek website.`}
+                                    className="flex items-center justify-between gap-4 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 px-6 py-4 font-medium transition-colors group"
+                                >
+                                    <span>Kirim Email</span>
+                                    <div className="p-2 bg-primary/10 rounded-lg group-hover:scale-110 transition-transform">
+                                        <Mail className="h-4 w-4 text-primary" />
+                                    </div>
+                                </a>
                             </div>
 
-                            <div>
-                                <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    required
-                                    value={form.email}
-                                    onChange={onChange}
-                                    autoComplete="email"
-                                    className="mt-1 w-full rounded-xl border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
-                                    placeholder="email@bisnis.com"
-                                />
+                            <div className="mt-6 p-4 bg-muted/30 rounded-xl">
+                                <p className="text-sm text-muted-foreground">
+                                    <strong>Respon Cepat:</strong> Kami biasanya membalas dalam 1-2 jam kerja
+                                </p>
                             </div>
-
-                            <div>
-                                <label htmlFor="company" className="text-sm font-medium">Perusahaan (opsional)</label>
-                                <input
-                                    id="company"
-                                    name="company"
-                                    value={form.company}
-                                    onChange={onChange}
-                                    autoComplete="organization"
-                                    className="mt-1 w-full rounded-xl border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
-                                    placeholder="Nama perusahaan"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="message" className="text-sm font-medium">Pesan</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    rows={5}
-                                    required
-                                    value={form.message}
-                                    onChange={onChange}
-                                    className="mt-1 w-full rounded-xl border bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-primary"
-                                    placeholder="Ceritakan kebutuhan Anda..."
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="inline-flex items-center justify-center gap-2 rounded-xl border bg-primary/90 px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary"
-                            >
-                                Kirim Pesan <ArrowUpRight className="h-4 w-4" />
-                            </button>
-
-                            <a
-                                href="https://wa.me/6281223487220"
-                                className="inline-flex items-center justify-center gap-2 rounded-xl border bg-primary/90 px-4 py-3 text-sm font-medium text-primary-foreground hover:bg-primary"
-                            >
-                                {BUSINESS_INFO.ctaLabel}
-                                <ArrowUpRight className="h-4 w-4" />
-                            </a>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </Container>
         </section>

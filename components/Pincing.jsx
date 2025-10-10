@@ -5,7 +5,7 @@ const PRICING = [
         name: "Starter",
         price: "Menyesuaikan",
         desc: "Landing page profesional untuk validasi cepat.",
-        features: ["1 Halaman", "Responsive & SEO Dasar", "Deploy ke Vercel"],
+        features: ["1 Halaman", "Responsive & SEO Dasar", "Hosting"],
     },
     {
         name: "Growth",

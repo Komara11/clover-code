@@ -75,7 +75,7 @@ const Services = () => {
             <Container>
                 <SectionTitle
                     title="Layanan Utama"
-                    subtitle="Paket fleksibel untuk kebutuhan bisnis—dari landing page hingga web app yang kompleks."
+                    subtitle="Paket fleksibel untuk kebutuhan bisnis dari landing page hingga web app yang kompleks."
                 />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {SERVICES.map((s, i) => (

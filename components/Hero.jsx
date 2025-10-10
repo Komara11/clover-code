@@ -114,7 +114,7 @@ const Hero = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="mt-4 grid grid-cols-3 gap-3 text-xs text-foreground/70">
+                            {/* <div className="mt-4 grid grid-cols-3 gap-3 text-xs text-foreground/70">
                                 <div className="rounded-xl border p-3 text-center">
                                     <div className="text-lg font-bold">40% ⬇</div>
                                     <div>Waktu Operasional</div>
@@ -127,7 +127,7 @@ const Hero = () => {
                                     <div className="text-lg font-bold">A+</div>
                                     <div>SEO & Speed</div>
                                 </div>
-                            </div>
+                            </div> */}
                         </motion.div>
                     </motion.div>
                 </div>
